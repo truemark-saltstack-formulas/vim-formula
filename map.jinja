@@ -1,0 +1,12 @@
+{% set vim = salt['grains.filter_by']({
+    'default': {
+        'package': 'vim',
+        'vimrc_location': '/etc/vim/vimrc.local',
+        'vimrc_file': 'salt://vim/vimrc.local',
+    },
+    'RedHat': {
+        'package': 'vim-enhanced',
+        'vimrc_location': '/etc/vimrc.local',
+        'vimrc_file': 'salt://vim/vimrc.local',
+    }
+}, merge=salt['pillar.get']('vim:lookup'), base='default') %}

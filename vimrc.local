@@ -1,0 +1,13 @@
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+set nowrap
+set background=dark
+set nowrap
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+syntax on
+
