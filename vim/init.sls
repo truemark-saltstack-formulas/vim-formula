@@ -21,3 +21,7 @@
     - backup: .orig
     - append_if_not_found: True
 {% endif %}
+
+
+"echo moo > /etc/moo.conf":
+  cmd.run
